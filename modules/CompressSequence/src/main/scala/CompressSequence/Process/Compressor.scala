@@ -4,7 +4,7 @@ object Compressor {
 
   /** Возвращает Iterator[T] сжатый по нулевому значению, определенному инстансом Empty[T]
    *  Любое колличество префиксных и постфиксных нулей будут отброшены
-   *  Подряд идущие zeroValue будут заменены на одно вхождение нулевого значения
+   *  Подряд идущие нулевые значения будут заменены на одно вхождение нулевого значения
    *  @tparam T тип значений, генерируемых итератором
    *  @param it Исходный итератор
    *  @return  итератор, содержащий результат преобразований над исходным итератором
@@ -20,7 +20,7 @@ object Compressor {
         case (None, Some(v)) if Empty.isEmpty(v) => false
         case _ => true
       })
-      .map(_.previous.get) //Не может выкинуть NoSuchElementException из-за фильта case (_, None) => false
+      .map(_.previous.get) //Не может выкинуть NoSuchElementException из-за фильтра case (_, None) => false
   }
 
 }
