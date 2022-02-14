@@ -11,7 +11,10 @@
 * SlidingWindow - вспомогательная структура для обработки последовательностей
 
 ### Сборка
-sbt project task1; assembly
+* sbt project task1; assembly
+* Для юнит тестов используются большие последовательности и они могут занять некоторое время (~минут 10)  
+Для сборки без тестов используйте:   
+sbt project task1; set test in assembly := {}; assembly
 
 ## Task2: 
 TBD
